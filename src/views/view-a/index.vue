@@ -8,7 +8,3 @@ import ChildContent from "../view-a/child-content/index.vue";
     <ChildContent />
   </main>
 </template>
-
-<style>
-
-</style>

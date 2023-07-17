@@ -1,4 +1,6 @@
 // Define static config, example: table config
+import { h } from "vue";
+import { ExportOutlined, EyeOutlined } from "@ant-design/icons-vue";
 export const columns = [
   {
     title: "Tên",
@@ -8,8 +10,7 @@ export const columns = [
   },
   {
     title: "status",
-    key: "status",
-    dataIndex: "isActive",
+    key: "type",
     align: "center",
   },
   {
@@ -18,17 +19,20 @@ export const columns = [
     component: "abc",
     actions: [
       {
-        key: "a",
+        key: "ExportOutlined",
         onClick: (record) => {
           console.log("record", record);
         },
-        tooltip: "gấu trúc",
-        icon: {
-          viewBox: "0 0 1024 1024",
-          width: "1em",
-          height: "1em",
-          fill: "currentColor",
+        tooltip: "di chuyển",
+        type: h(ExportOutlined),
+      },
+      {
+        key: "EyeOutlined",
+        onClick: (record) => {
+          console.log("record", record);
         },
+        tooltip: "chi tiết",
+        type: h(EyeOutlined),
       },
     ],
   },
@@ -36,11 +40,17 @@ export const columns = [
 
 export const demoData = [
   {
-    name: "Nguyễn Thị Định",
-    isActive: true,
+    id: 24,
+    name: "FB",
+    type: "forder",
+    url: null,
+    path: "2",
   },
   {
-    name: "Tạ Quảng Bửu",
-    isActive: false,
+    id: 28,
+    name: null,
+    type: "image/jpeg",
+    url: "images\\hinh.jpg",
+    path: "2/1",
   },
 ];

@@ -97,7 +97,7 @@
 
 <script setup>
 import { array, shape, number, func, oneOf } from "vue-types";
-import { onMounted, ref, useAttrs, h } from "vue";
+import { onMounted, ref, h } from "vue";
 import Icon from "@ant-design/icons-vue";
 
 import { useLoading } from "@/utils/hooks";
@@ -133,8 +133,6 @@ const handlePagination = async () => {
 };
 
 const handleGetData = async (params) => {
-  const attrs = useAttrs();
-  console.log(attrs, "atttr");
   tableLoading.setLoading(true);
   try {
     await props.onGetData(params);
